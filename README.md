@@ -23,9 +23,8 @@ The Appointment is mostly using the bootstrap framework and some custom styling.
 The light color was chosed so that it would be easy to read and keep the interface as clean as possible. 
 
 ### Unachieved goals
-1. The first part to enter the username has not been implemented
-2. Unable to display the time slots even thought the data has been passed down
-3. Unable to save the appointment to the localserver or webserver
+1. Unable to save the appointment to the localserver or webserver
+2. Usage of Bootstrap styling rather than custom styling
 
 ### Conclusion
 Despite being unable to finish the project, I was able to decode and learn new ways to think in react.
