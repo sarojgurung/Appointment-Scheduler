@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 export class LoginForm extends Component {
     continue = e => {
         e.preventDefault();
-        this.props.nextStep();
+        if (this.props.values.userName){
+            this.props.nextStep();
+        }
     };
 
     render() {
