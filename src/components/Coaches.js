@@ -15,6 +15,11 @@ class Coaches extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    logout = e => {
+        e.preventDefault();
+        this.props.prevStep();
+    };
+
     // Waiting for the data to be mounted from the given API
     async componentDidMount(){
         const url = "https://raw.githubusercontent.com/suyogshiftcare/jsontest/main/available.json";
@@ -31,7 +36,8 @@ class Coaches extends Component {
             if (name === coach.name){
                 sameCoachObj.push(coach);
             }
-        this.setState({individualCoachAvailability: sameCoachObj});
+            this.setState({individualCoachAvailability: sameCoachObj});
+            return sameCoachObj
         })
     }
 
@@ -39,6 +45,7 @@ class Coaches extends Component {
         // console.log(this.state.individualCoachAvailability);
         return (
             <div>
+                <button class="btn btn-danger position-absolute btn-logout m-2" onClick={this.logout} > Logout </button>
                 {this.state.loading 
                 ? 
                 <div class="spinner-border text-secondary" role="status">
@@ -59,7 +66,7 @@ class Coaches extends Component {
                         })}
                     </div>
                 </div>}
-                {this.state.individualCoachAvailability ? <MySchedule data={this.state.individualCoachAvailability}/> : <div></div>}
+                {this.state.individualCoachAvailability ? <MySchedule data={this.state.individualCoachAvailability}/> : <></>}
             </div>
             
         )

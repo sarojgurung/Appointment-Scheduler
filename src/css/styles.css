@@ -13,6 +13,11 @@
     transform: translateY(-.4rem);
 }
 
+.btn-logout{
+  top: 0;
+  right: 0;
+}
+
 @media (min-width: 768px){
     .seven-cols .col-md-2,
     .seven-cols .col-sm-2,
