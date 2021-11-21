@@ -2,6 +2,8 @@
 
 This is a smiple appointment scheduler for fitness Coach where the users will be able to book a 30 minute session with the coach when they are avaialbel.
 
+### [GitHub Deployment Link](https://sarojgurung.github.io/Appointment-Scheduler/)
+
 ### Frameworks Used
 
 React Library, JSX, HTML, CSS, Bootstrap, Moment.JS
