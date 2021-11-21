@@ -1,0 +1,42 @@
+.coach-container{
+    height: 100px;
+    background-color: rgb(84, 165, 204);
+    border-radius: 1rem;
+    color: white;
+}
+
+.coach-container{
+    transition: .2s ease-in-out;
+}
+
+ .coach-container:hover{
+    transform: translateY(-.4rem);
+}
+
+@media (min-width: 768px){
+    .seven-cols .col-md-2,
+    .seven-cols .col-sm-2,
+    .seven-cols .col-lg-2  {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .seven-cols .col-md-2,
+    .seven-cols .col-sm-2,
+    .seven-cols .col-lg-2 {
+      width: 14.285714285714285714285714285714%;
+    }
+  }
+  
+  /**
+   *  The following is not really needed in this case
+   *  Only to demonstrate the usage of @media for large screens
+   */    
+  @media (min-width: 1200px) {
+    .seven-cols .col-md-2,
+    .seven-cols .col-sm-2,
+    .seven-cols .col-lg-2 {
+      width: 14.285714285714285714285714285714%;
+    }
+  }
