@@ -1,10 +1,14 @@
 import React from 'react';
 import moment from 'moment';
 import TimeIntervals from './TimeIntervals';
+import SelectedCoach from './SelectedCoach';
 
 class MySchedule extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            coachName: "",
+        }
         this.getBookingTimesRenderer = this.getBookingTimesRenderer.bind(this);
     }
 
@@ -27,39 +31,45 @@ class MySchedule extends React.Component{
             }
             return a;
         })
-        return timeRange;
+        let skimmedValue = timeRange.filter(value => Object.keys(value).length !== 0);
+        return skimmedValue;
     }
 
     render(){
+        let singleCoachData = this.props.data.map(coach => {
+            return coach.name;
+        })
+        let coachName = Array.from(singleCoachData.reduce((map, obj) => map.set(obj.name, obj), new Map()).values());
         return(
-            <div class="container">
+            <div class="container py-5">
+                <SelectedCoach coachName={coachName} />
                 <div class="row seven-cols">
                     <div class="col-sm-12 col-md-2">
-                        <div>Monday</div>
+                        <div class="bg-dark text-light p-2 fw-bold rounded-3 my-2">Monday</div>
                         <TimeIntervals data={this.getBookingTimesRenderer("Monday")} />
                     </div>
                     <div class="col-sm-12 col-md-2">
-                        <div>Tuesday</div>
+                        <div class="bg-dark text-light p-2 fw-bold rounded-3 my-2">Tuesday</div>
                         <TimeIntervals data={this.getBookingTimesRenderer("Tuesday")} />
                     </div>
                     <div class="col-sm-12 col-md-2">
-                        <div>Wednesday</div>
+                        <div class="bg-dark text-light p-2 fw-bold rounded-3 my-2">Wednesday</div>
                         <TimeIntervals data={this.getBookingTimesRenderer("Wednesday")}/>
                     </div>
                     <div class="col-sm-12 col-md-2">
-                        <div>Thursday</div>
+                        <div class="bg-dark text-light p-2 fw-bold rounded-3 my-2">Thursday</div>
                         <TimeIntervals data={this.getBookingTimesRenderer("Thursday")}/>
                     </div>
                     <div class="col-sm-12 col-md-2">
-                        <div>Friday</div>
+                        <div class="bg-dark text-light p-2 fw-bold rounded-3 my-2">Friday</div>
                         <TimeIntervals data={this.getBookingTimesRenderer("Friday")}/>
                     </div>
                     <div class="col-sm-12 col-md-2">
-                        <div>Saturday</div>
+                        <div class="bg-dark text-light p-2 fw-bold rounded-3 my-2">Saturday</div>
                         <TimeIntervals data={this.getBookingTimesRenderer("Saturday")}/>
                     </div>
                     <div class="col-sm-12 col-md-2">
-                        <div>Sunday</div>
+                        <div class="bg-dark text-light p-2 fw-bold rounded-3 my-2">Sunday</div>
                         <TimeIntervals data={this.getBookingTimesRenderer("Sunday")}/>
                     </div>
                 </div>

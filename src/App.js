@@ -1,12 +1,13 @@
 import './App.css';
 import Coaches from './components/Coaches';
+import { MainForm } from './components/MainForm';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-          {/* <MySchedule /> */}
-          <Coaches />
+          {/* <Coaches /> */}
+          <MainForm />
       </header>
     </div>
   );

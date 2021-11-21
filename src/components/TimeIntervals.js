@@ -10,8 +10,12 @@ export default function TimeIntervals(props){
     // THe return value is just showing the available time for a particular coach
     return (
         <div>
-            {props.data.map(value => {
-                return <div><button class="btn w-100 btn-secondary m-1">{value[0]}</button></div>
+            {props.data.map((value, index) => {
+                let catenatedDivArray = []
+                for (let i=0;i<value.length;i++){
+                    catenatedDivArray.push(<div><button class="btn w-100 btn-secondary my-1">{value[i]}</button></div>)
+                }
+                return catenatedDivArray;
             })}
         </div>
     )
