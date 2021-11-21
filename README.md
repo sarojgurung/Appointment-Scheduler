@@ -25,6 +25,7 @@ The light color was chosed so that it would be easy to read and keep the interfa
 ### Unachieved goals
 1. Unable to save the appointment to the localserver or webserver
 2. Usage of Bootstrap styling rather than custom styling
+3. Validation on the input username and logout
 
 ### Conclusion
 Despite being unable to finish the project, I was able to decode and learn new ways to think in react.
